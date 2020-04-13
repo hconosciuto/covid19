@@ -1,0 +1,15 @@
+insert into covid19 
+ (fecha, pais, infectados, muertes, recuperados, porcentaje_muertes, porcentaje_recuperados, inf_por_millon, mue_por_millon)
+ values ('2020-04-11 03:03:00','Argentina',2142,90,468,4.2,21.8,47,2)
+
+
+update covid19 set fecha = '2020-04-11 23:59:00' where fecha = '2020-04-11 03:03:00' and Pais = 'Argentina'
+
+
+update covid19 set (infectados, muertes, recuperados, porcentaje_muertes, porcentaje_recuperados, inf_por_millon, mue_por_millon) = 
+(2142,90,468,4.2,21.8,47,2)
+where (pais = 'Argentina') and fecha between'2020-04-12 00:00:00' and '2020-04-12 08:00:00'
+
+select * from covid19 where (pais = 'Argentina') and fecha between'2020-04-12 00:00:00' and '2020-04-12 08:00:00'
+
+
