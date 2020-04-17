@@ -1,0 +1,8 @@
+# Estos son los modulos principales que usa la aplicación.
+
+panda: Lee la tabla del site.
+psycopg2: Permite trabajar con Postgresql.
+
+# Instalación de los modulos.
+pip3 install pandas
+pip3 install psycopg2
