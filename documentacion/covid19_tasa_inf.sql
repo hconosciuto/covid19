@@ -2,7 +2,7 @@
 
 -- DROP TABLE public.covid19_tasa_inf;
 
-CREATE TABLE public.covid19_tasa_inf
+CREATE TABLE covid19_tasa_inf
 (
   fecha timestamp without time zone,
   pais character varying(40),
@@ -12,5 +12,5 @@ CREATE TABLE public.covid19_tasa_inf
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE public.covid19_tasa_inf
+ALTER TABLE covid19_tasa_inf
   OWNER TO pi;

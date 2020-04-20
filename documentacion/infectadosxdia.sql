@@ -2,7 +2,7 @@
 
 -- DROP TABLE public.infectadosxdia;
 
-CREATE TABLE public.infectadosxdia
+CREATE TABLE infectadosxdia
 (
   dia date,
   pais character varying(40),
@@ -11,5 +11,5 @@ CREATE TABLE public.infectadosxdia
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE public.infectadosxdia
+ALTER TABLE infectadosxdia
   OWNER TO pi;
