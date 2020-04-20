@@ -2,7 +2,7 @@
 
 -- DROP TABLE public.covid19;
 
-CREATE TABLE public.covid19
+CREATE TABLE covid19
 (
   fecha timestamp without time zone,
   pais character varying(40),
@@ -17,5 +17,5 @@ CREATE TABLE public.covid19
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE public.covid19
+ALTER TABLE covid19
   OWNER TO pi;

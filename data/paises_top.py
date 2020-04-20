@@ -11,8 +11,8 @@ linfectados = []
 
 # Genero la conexion con la base.
 conn = psycopg2.connect(
-    host = "localhost",
-    database="raspi",
+    host = "postgresql",
+    database="salud",
     user="pi",
     password="Software26"
 )
