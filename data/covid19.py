@@ -16,13 +16,20 @@ dfs = pd.read_html('https://epidemic-stats.com/coronavirus', header=0)
 # Creo un DataFrame desde dfs
 df = dfs[0]
 
-# Genero la conexion con la base.
+# Genero la conexion con la base. HERNAN
 conn = psycopg2.connect(
-    host = "postgresql",
-    database="salud",
+    host = "localhost",
+    database="raspi",
     user="pi",
     password="Software26"
 )
+
+# Genero la conexion con la base. RODRI
+#conn = psycopg2.connect(
+#    host = "postgresql",
+#    database="salud",
+#    user="pi",
+#    password="Software26"
 
 # Creo el cursor.
 cur = conn.cursor()
