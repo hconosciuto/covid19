@@ -1,14 +1,18 @@
-#!/usr/bin/python3.7
-
 import pandas as pd
 import psycopg2
 from datetime import datetime
-import math
+import math, os
 
 # Obtengo la fecha y hora
 # current date and time
 ahora = datetime.now()
 vfecha = ahora.strftime("%Y-%m-%d %H:%M")
+
+# Leo las variables para conectarme a Postgresql.
+phost = os.environ['hac_PHOST']
+puser = os.environ['hac_PUSERNAME']
+pdatabase = os.environ['hac_PDATABASE']
+ppassword =  os.environ['hac_PPASSWORD']
 
 # Leo la pagina y lo mando a dfs
 dfs = pd.read_html('https://epidemic-stats.com/coronavirus', header=0)
@@ -16,13 +20,22 @@ dfs = pd.read_html('https://epidemic-stats.com/coronavirus', header=0)
 # Creo un DataFrame desde dfs
 df = dfs[0]
 
-# Genero la conexion con la base. HERNAN
+# Genero la conexion con la base. VARIABLES DE ENTORNO - Hernan 2020-04-21
 conn = psycopg2.connect(
-    host = "localhost",
-    database="raspi",
-    user="pi",
-    password="Software26"
+    host = phost,
+    database = pdatabase,
+    user = puser,
+    password = ppassword
 )
+
+
+# Genero la conexion con la base. HERNAN
+#conn = psycopg2.connect(
+#    host = "localhost",
+#    database="raspi",
+#    user="pi",
+#    password="Software26"
+#)
 
 # Genero la conexion con la base. RODRI
 #conn = psycopg2.connect(

@@ -1,7 +1,6 @@
-#!/usr/bin/python3.7
-
 import psycopg2
 from datetime import datetime
+import os
 
 vpais_actual = "Argentina"
 infxhora = 0
@@ -23,14 +22,40 @@ lpaises.append("Paraguay")
 lpaises.append("Bolivia")
 lpaises.append("Uruguay")
 
+# Leo las variables para conectarme a Postgresql.
+phost = os.environ['hac_PHOST']
+puser = os.environ['hac_PUSERNAME']
+pdatabase = os.environ['hac_PDATABASE']
+ppassword =  os.environ['hac_PPASSWORD']
 
-# Genero la conexion con la base.
+#print (phost)
+#print (puser)
+#print (pdatabase)
+#print (ppassword)
+
+# Genero la conexion con la base. VARIABLES DE ENTORNO - Hernan 2020-04-21
 conn = psycopg2.connect(
-    host = "postgresql",
-    database="salud",
-    user="pi",
-    password="Software26"
+    host = phost,
+    database = pdatabase,
+    user = puser,
+    password = ppassword
 )
+
+# Genero la conexion con la base. HERNAN
+#conn = psycopg2.connect(
+#    host = "postgresql",
+#    database="salud",
+#    user="pi",
+#    password="Software26"
+#)
+
+# Genero la conexion con la base. RODRI
+#conn = psycopg2.connect(
+#    host = "postgresql",
+#    database="salud",
+#    user="pi",
+#    password="Software26"
+#)
 
 # Creo el cursor Con los 10 paises que mas infectados tienen.
 cur = conn.cursor()
