@@ -1,0 +1,20 @@
+Pedir un pais para simular
+
+(X)Tomar los ultimos 5 dias (en realidad 1 porque no hay mas)
+(V2) Pedir desde que fecha se quiere obtener los datos para simular. El DEFAULT es el día 1 de la tabla. 
+     Esto permite tomar una franja de fecha especial, por ej. que coincida con un cambio de política en ese país para simularlo acá.
+
+Sacar un promedio de crecimiento 
+
+
+	Para esto debo armar un cursor y recorrerlo
+	En una lista guardar la diferencia
+(X)	Obtener un promedio de ese valor    ## Cambiado en la nueva versión por la linea de abajo.
+(V2)    Obtener la cantidad de casos por día del país. 
+
+(X) Aplicar el valor obtenido sobre el ultimo valor de Argentina
+(V2)    Rproducir la simulación con Argentina sumandole la cantidad de cada día obtenido al valor de Argentina y hacerlo acumulativo.
+
+Mostrar la evolucion del modelo simulado 
+
+
