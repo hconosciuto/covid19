@@ -68,6 +68,9 @@ for index, row in df.iterrows():
     if math.isnan(vinf_por_millon):
        vinf_por_millon = float('0')
 
+    if math.isnan(vrecuperados):
+        vrecuperados = float('0')
+
     # Quito el signo %.
     vporcentaje_muertes = vporcentaje_muertes[:-1]
     vporcentaje_recuperados = vporcentaje_recuperados[:-1]
@@ -80,6 +83,14 @@ for index, row in df.iterrows():
     vinf_por_millon = int(vinf_por_millon)
     vmue_por_millon = int(vmue_por_millon)
 
+    # print (vpais)
+    # print (vinfectados)
+    # print (vmuertes)
+    # print (vrecuperados)
+    # print (vporcentaje_muertes)
+    # print (vporcentaje_recuperados)
+    # print (vinf_por_millon)
+    # print (vmue_por_millon)
 
     # Hago el insert del pais.
     cur.execute("insert into covid19 (fecha, pais, infectados, muertes, recuperados, porcentaje_muertes, porcentaje_recuperados,\
